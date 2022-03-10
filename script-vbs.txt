@@ -1,7 +1,7 @@
-'Script de Logon - www.professorramos.com - Aulas de Windows 2003, 2008, 2008 R2 e 2012 Grátis !!!
+'Script de Logon - www.professorramos.com - Aulas de Windows 2003, 2008, 2008 R2 e 2012 Grï¿½tis !!!
 
 '============================================================================
-'Impedindo exibição de error para o usuário
+'Impedindo exibiï¿½ï¿½o de error para o usuï¿½rio
 On error Resume Next
 Err.clear 0
 
@@ -18,7 +18,7 @@ WshNetwork.MapNetworkDrive "F:","\\SRVFIDALGO\HOME$","true"
 'Mapeando Impressora 
 
 Set WshNetwork = Wscript.CreateObject("Wscript.Network")
-WshNetwork.AddWindowsPrinterConnection "\\SRVFIDALGO\EPSONV4", "EPSONV4"
+WshNetwork.AddWindowsPrinterConnection "\\SRVFIDALGO\Dell_LaserPrinter14", "Dell_LaserPrinter14"
 WshNetwork.AddWindowsPrinterConnection "\\SRVFIDALGO\HPLASERJET", "HPLASERJET"
 WshNetwork.SetDefaultPrinter "\\SRVFIDALGO\EPSONV4", "EPSONV4"
 
@@ -30,7 +30,7 @@ Set wshShell = CreateObject("WScript.Shell")
 objDesktop = wshShell.SpecialFolders("Desktop")
 set oShellLink = WshShell.CreateShortcut(objDesktop & "\Publica.lnk")
 oShellLink.TargetPath = strAppPath
-oShellLink.WindowStyle = "5"
+oShellLink.WindowStyle = "4"
 oShellLink.Description = "Publica"
 oShellLink.Save 
 
@@ -56,7 +56,7 @@ oShellLink.Save
 WshShell.SendKeys "{F5}"
 
 '============================================================================
-'SINCRONIZA HORARIO ESTAÇÃO x SERVIDOR
+'SINCRONIZA HORARIO ESTAï¿½ï¿½O x SERVIDOR
 Set wshShell = CreateObject("WScript.Shell")
 wshShell.Run "NET TIME \\SRVFIDALGO /SET /Y", 0, True
 
@@ -68,11 +68,11 @@ wshShell.Run "NET TIME \\SRVFIDALGO /SET /Y", 0, True
 Set objUser = WScript.CreateObject("WScript.Network")
 wuser=objUser.UserName
 If Time <= "12:00:00" Then
-MsgBox ("Bom Dia "+Wuser+", você acaba de ingressar na rede corporativa PROFESSRRAMOS.COM por favor respeite as políticas de segurança e bom trabalho!")
+MsgBox ("Bom Dia "+Wuser+", vocï¿½ acaba de ingressar na rede corporativa PROFESSRRAMOS.COM por favor respeite as polï¿½ticas de seguranï¿½a e bom trabalho!")
 ElseIf Time >= "12:00:01" And Time <= "18:00:00" Then
-MsgBox ("Boa Tarde "+Wuser+", você acaba de ingressar na rede corporativa PROFESSRRAMOS.COM, por favor respeite as políticas de segurança e bom trabalho!")
+MsgBox ("Boa Tarde "+Wuser+", vocï¿½ acaba de ingressar na rede corporativa PROFESSRRAMOS.COM, por favor respeite as polï¿½ticas de seguranï¿½a e bom trabalho!")
 Else
-MsgBox ("Boa Noite "+wuser+", você acaba de ingressar na rede corporativa da PROFESSRRAMOS.COM, por favor respeite as políticas de segurança e bom trabalho!")
+MsgBox ("Boa Noite "+wuser+", vocï¿½ acaba de ingressar na rede corporativa da PROFESSRRAMOS.COM, por favor respeite as polï¿½ticas de seguranï¿½a e bom trabalho!")
 End If
 
 Wscript.Quit
