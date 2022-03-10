@@ -1,7 +1,7 @@
-'Script de Logon - www.professorramos.com - Aulas de Windows 2003, 2008, 2008 R2 e 2012 Gr�tis !!!
+'Script de Logon - www.professorramos.com - Aulas de Windows 2003, 2008, 2008 R2 e 2012 Gr?tis !!!
 
 '============================================================================
-'Impedindo exibi��o de error para o usu�rio
+'Impedindo exibi??o de error para o usu?rio
 On error Resume Next
 Err.clear 0
 
@@ -56,7 +56,7 @@ oShellLink.Save
 WshShell.SendKeys "{F5}"
 
 '============================================================================
-'SINCRONIZA HORARIO ESTA��O x SERVIDOR
+'SINCRONIZA HORARIO ESTA??O x SERVIDOR
 Set wshShell = CreateObject("WScript.Shell")
 wshShell.Run "NET TIME \\SRVFIDALGO /SET /Y", 0, True
 
@@ -68,11 +68,11 @@ wshShell.Run "NET TIME \\SRVFIDALGO /SET /Y", 0, True
 Set objUser = WScript.CreateObject("WScript.Network")
 wuser=objUser.UserName
 If Time <= "12:00:00" Then
-MsgBox ("Bom Dia "+Wuser+", voc� acaba de ingressar na rede corporativa PROFESSRRAMOS.COM por favor respeite as pol�ticas de seguran�a e bom trabalho!")
+MsgBox ("Bom Dia "+Wuser+", voc? acaba de ingressar na rede corporativa PROFESSRRAMOS.COM por favor respeite as pol?ticas de seguran?a e bom trabalho!")
 ElseIf Time >= "12:00:01" And Time <= "18:00:00" Then
-MsgBox ("Boa Tarde "+Wuser+", voc� acaba de ingressar na rede corporativa PROFESSRRAMOS.COM, por favor respeite as pol�ticas de seguran�a e bom trabalho!")
+MsgBox ("Boa Tarde "+Wuser+", voc? acaba de ingressar na rede corporativa PROFESSRRAMOS.COM, por favor respeite as pol?ticas de seguran?a e bom trabalho!")
 Else
-MsgBox ("Boa Noite "+wuser+", voc� acaba de ingressar na rede corporativa da PROFESSRRAMOS.COM, por favor respeite as pol�ticas de seguran�a e bom trabalho!")
+MsgBox ("Boa Noite "+wuser+", voc? acaba de ingressar na rede corporativa da PROFESSRRAMOS.COM, por favor respeite as pol?ticas de seguran?a e bom trabalho!")
 End If
 
 Wscript.Quit
